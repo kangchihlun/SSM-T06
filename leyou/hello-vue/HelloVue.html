@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--vue 對象的 Html 模板-->
+    <div id="app">
+        <!--雙向數據綁定 通過 v-model -->
+        <input type="text" v-model="num">
+        <!--v-on 裡面跟事件連接 事件內可以接 js 表達式  v-on 可以用 @click 符號代替 -->
+        <input type="button" value="點我呀" v-on:click="increment">
+        <h1>大家好我是{{name}},有{{sum()}}位妹子迷戀我</h1>
+
+        <!--花括號內可以是一個 js 表達式-->
+        <h1>1+4={{1+4}}</h1>
+
+        <!--花括號 在低網速沒數值的時候會被秀出來 ，解決之道改用 v-text 和 v-html (強烈建議使用)-->
+        <h1>大家好我是<span v-text="name"></span> ,有{{sum()}}位妹子迷戀我</h1>
+        <!-- v-html 演示 -->
+        <h1>大家好我是<span v-html="prod_html"></span> ,有{{sum()}}位妹子迷戀我</h1>
+
+        <!-- v-model 可以使用的元件有： input select textarea checkbox radio components(vue 的自定義組件)-->
+        <!--多個 checkbox 對應一個model 時候， model 的類型是一個數組，單個 checkbox 是 bool 類型-->
+        <input type="checkbox" value="ios" v-model="language">ios
+        <input type="checkbox" value="java" v-model="language">java
+        <input type="checkbox" value="php" v-model="language">php
+        <h1>
+            你选择了：{{language.join(',')}}
+        </h1>
+
+        <!--演示綁定右鍵點擊事件  increment($event) 傳入 event 之後 event.preventDefault 可以禁用默認右鍵菜單 -->
+        <!--.stop 阻止事件冒泡到父元素-->
+        <!--.prevent 阻止默認事件發生-->
+        <!--.capture 事件捕獲模式-->
+        <!--.self 只有元素自身觸發才執行(冒泡或捕獲的都不執行)-->
+        <!--.once 只執行一次-->
+        <input type="button" value="點我呀" @click="increment" @contextMenu.prevent="increment">
+
+        <br>
+        <!--按鍵輸入事件  13 = enter v-model="num"-->
+        <!--.enter-->
+        <!--.tab .esc-->
+        <!--.delete (捕獲 delete 和 backspace)-->
+        <!--.space-->
+        <!--.up .down .left .right-->
+        <!--Alt + c => @keyup.alt.67-->
+        <!--Ctrl + Click => @click.ctrl-->
+        <input type="text"  @keyup.enter="submit">
+
+        <hr>
+        <ul>
+            <li v-for="(user,index) in users">{{index+1}}.{{user.name}}-{{user.gender}}-{{user.age}} </li>
+        </ul>
+        <hr>
+        <!--v-for 可以遍歷拆解 object-->
+        <ul>
+            <li v-for="(value,key,index) in user" :key="index">{{index}}.{{key}}-{{value}}</li>
+        </ul>
+    </div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 初始化一個Vue實例
+    const app = new Vue({
+        el:"#app", // element 的縮寫 ，選擇器 作用域宣告
+        data:{  // 數據模型
+            name:"kang",
+            num : 100,
+            prod_html : "<span style='color: darkred'>Kang</span>", // 給 v-html 套用的
+            language : ['java'],  // 給 v-model 多選
+            users:[               // 給 v-for 遍歷
+                {name:'柳炎',gender:'女', age:21},
+                {name:'風歌',gender:'女', age:22},
+                {name:'范冰冰',gender:'女', age:23},
+                {name:'劉亦菲',gender:'女', age:24},
+                {name:'柳炎',gender:'女', age:25}
+            ],
+            user : {name:'柳炎',gender:'女', age:21}
+        },
+        methods:{  // 定義方法
+            increment(){
+                //console.log(this);
+                // eve.preventDefault(); // 鎖死右鍵彈窗
+                this.num++;
+            },
+            sum(){   // 給花括號用的表達式
+                return this.num ;
+            },
+            submit(){
+                console.log("已經提交")
+            }
+        },
+        created(){  // created 鉤子函數 在加載模板，選染之前調用
+            // ajax 請求 success 之後
+            this.num = 10000;
+            //console.log(this)
+        }
+    })
+</script>
+</body>
+</html>
