@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    #  docker container mysql start :
+    # docker run --name mysql02  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    url: jdbc:mysql://192.168.0.101:3306/jdbc # to docker container mysql:5.5  # use ip addr to get ip
+    driver-class-name: com.mysql.jdbc.Driver
+  #resources:
+  #  static-locations: classpath:/hello
+
