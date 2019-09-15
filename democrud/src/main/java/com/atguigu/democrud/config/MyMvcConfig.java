@@ -1,9 +1,11 @@
 package com.atguigu.democrud.config;
 
+import com.atguigu.democrud.component.LoginHandlerInterceptor;
 import com.atguigu.democrud.component.MyLocaleResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -26,6 +28,17 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("login");
                 registry.addViewController("/index.html").setViewName("login");
+                registry.addViewController("/main").setViewName("dashboard");
+            }
+
+
+            //
+            @Override
+            public void addInterceptors(InterceptorRegistry registry) {
+                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**") //全部加入攔截
+                    .excludePathPatterns("/index.html","/","/user/login"); //以下路徑除外，這三個會導向登入
+
+                // *.css *.js ==> Springboot 已經有靜態資源映射，不用做任何事
             }
         };
         return adapter;
