@@ -10,7 +10,8 @@ spring:
   # localization resource
   messages:
     basename: i18n.login
-  thymeleaf:
-    cache: false
+  profiles:
+    active: dev
+
   #resources:
   #  static-locations: classpath:/hello
