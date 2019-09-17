@@ -66,13 +66,13 @@
 		<!--include 直接引入 fragment 的內容-->
 		<!--如果使用 th:insert 等方法導入，可以不用寫 ~{}-->
 		<!--行內寫法可以加上 [[~{}]] [(~{})]-->
-		<div th:replace="~{dashboard::navbar}"></div>
+		<div th:replace="~{commons/bar::topbar}"></div>
 
 		<div class="container-fluid">
 			<div class="row">
 
 				<!--引入側邊欄  用id 選擇器 前面加 #-->
-				<div th:replace="~{dashboard::#sidebar}"></div>
+				<div th:replace="~{commons/bar::#sidebar(activeUri='emps')}"></div>
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 					<h2>Section title</h2>
 					<div class="table-responsive">
