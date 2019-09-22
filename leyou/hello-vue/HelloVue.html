@@ -47,7 +47,7 @@
         <!--.up .down .left .right-->
         <!--Alt + c => @keyup.alt.67-->
         <!--Ctrl + Click => @click.ctrl-->
-        <input type="text"  @keyup.enter="submit">
+        <input type="email"  @keyup.enter="submit" v-model="email">
 
         <hr>
         <ul>
@@ -58,6 +58,28 @@
         <ul>
             <li v-for="(value,key,index) in user" :key="index">{{index}}.{{key}}-{{value}}</li>
         </ul>
+
+        <hr>
+        <!--v-if 如果為 false 完全不渲染-->
+        <input type="button" value="SHOW" @click="show=!show">
+        <h2><span v-if="show" >Now You See Me : Show is {{show}}</span></h2>
+        <!--v-show 如果為 false 渲染但隱藏 設置display:none-->
+        <h2><span v-show="show" >Now You Show Me : Show is {{show}} watch the element</span></h2>
+
+        <!--v-if else-if 演示  span 全部都要接在一起 v-else-if 才會起作用　-->
+        <input type="button" value="點我生成隨機數" @click="random=Math.random()">{{random}}
+        <h2><span v-if="random>0.75" >你看到我說明我是大於 0.75 </span>
+        <span v-else-if="random>0.5" >你看到我說明我是大於 0.5</span>
+        <span v-else-if="random>0.25" >你看到我說明我是大於 0.25</span>
+        <span v-else>你看到我說明我是大於 0</span>
+        </h2>
+        <hr>
+        <ul>
+            <!--v-if v-for 結合判斷-->
+            <li v-if="user.gender=='男'" v-for="(user,index) in users">{{index+1}}.{{user.name}}-{{user.gender}}-{{user.age}} </li>
+        </ul>
+
+        <hr/>
     </div>
 <script src="node_modules/vue/dist/vue.js"></script>
 <script>
@@ -71,12 +93,15 @@
             language : ['java'],  // 給 v-model 多選
             users:[               // 給 v-for 遍歷
                 {name:'柳炎',gender:'女', age:21},
-                {name:'風歌',gender:'女', age:22},
+                {name:'風歌',gender:'男', age:22},
                 {name:'范冰冰',gender:'女', age:23},
                 {name:'劉亦菲',gender:'女', age:24},
                 {name:'柳炎',gender:'女', age:25}
             ],
-            user : {name:'柳炎',gender:'女', age:21}
+            user : {name:'柳炎',gender:'女', age:21},
+            email : "kang@email.com",
+            show : true,
+            random :0
         },
         methods:{  // 定義方法
             increment(){
@@ -88,7 +113,7 @@
                 return this.num ;
             },
             submit(){
-                console.log("已經提交")
+                console.log("已經提交 : " + this.email)
             }
         },
         created(){  // created 鉤子函數 在加載模板，選染之前調用
