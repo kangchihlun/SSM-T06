@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .active{
+            color: #ff9520
+        }
+    </style>
+    <!-- <link href="https://cdn.bootcss.com/skeleton/2.0.4/skeleton.css" rel="stylesheet"> -->
 </head>
 <body>
     <!--vue 對象的 Html 模板-->
@@ -36,7 +42,7 @@
         <!--.capture 事件捕獲模式-->
         <!--.self 只有元素自身觸發才執行(冒泡或捕獲的都不執行)-->
         <!--.once 只執行一次-->
-        <input type="button" value="點我呀" @click="increment" @contextMenu.prevent="increment">
+        <input class="button" type="button" value="點我呀" @click="increment" @contextMenu.prevent="increment">
 
         <br>
         <!--按鍵輸入事件  13 = enter v-model="num"-->
@@ -78,8 +84,17 @@
             <!--v-if v-for 結合判斷-->
             <li v-if="user.gender=='男'" v-for="(user,index) in users">{{index+1}}.{{user.name}}-{{user.gender}}-{{user.age}} </li>
         </ul>
-
         <hr/>
+        <!--v-bind 用法 綁定 data.someValue -->
+        <input type="button" v-bind:value="someValue"><br>
+
+        <!--text 綁定 store ，改變數量後，按鈕樣式顯示綁定 store 判斷是否大於0-->
+        <input type="text" v-model="store"><br>
+        <input type="button" v-bind:class="{active:store>0}" v-bind:value="{store}"><br>
+        <!-- 簡寫 v-bind 可省略 -->
+        <hr>
+        <div class="container">{{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth()+"月" }}</div>
+
     </div>
 <script src="node_modules/vue/dist/vue.js"></script>
 <script>
@@ -101,7 +116,10 @@
             user : {name:'柳炎',gender:'女', age:21},
             email : "kang@email.com",
             show : true,
-            random :0
+            random :0,
+            someValue:"kang",
+            store : 0,
+            birthday : 1529032123201 // 毫秒值
         },
         methods:{  // 定義方法
             increment(){
