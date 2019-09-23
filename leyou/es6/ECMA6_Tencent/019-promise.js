@@ -1,15 +1,15 @@
 /**
-    構造函數 promise
+    構造函數 prm
 */
 
-let promise = new Promise((resolve,reject)=>{
+let prm = new Promise((resolve,reject)=>{
     //reject()  // 執行 .catch() 方法
     console.log("Do my things")
     resolve()  // 執行 .then() 方法
 })
-console.log(promise)
+console.log(prm)
 
-promise
+prm
 .then(()=>{
     console.log("成功")
 })
