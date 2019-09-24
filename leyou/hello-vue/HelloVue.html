@@ -93,8 +93,11 @@
         <input type="button" v-bind:class="{active:store>0}" v-bind:value="{store}"><br>
         <!-- 簡寫 v-bind 可省略 -->
         <hr>
-        <div class="container">{{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth()+"月" }}</div>
-
+        <div class="container">我的生日： {{toBirthday()}}</div>
+        <div class="container">計算屬性生日： {{get_birthday}}</div>
+        <hr>
+        <!-- watch 監控 -->
+        <input type="text" v-model="search"><br>
     </div>
 <script src="node_modules/vue/dist/vue.js"></script>
 <script>
@@ -119,25 +122,49 @@
             random :0,
             someValue:"kang",
             store : 0,
-            birthday : 1529032123201 // 毫秒值
+            birthday : 1529032123201, // 毫秒值
+            search : ""
         },
         methods:{  // 定義方法
             increment(){
                 //console.log(this);
                 // eve.preventDefault(); // 鎖死右鍵彈窗
-                this.num++;
+                this.num++
             },
             sum(){   // 給花括號用的表達式
-                return this.num ;
+                return this.num
             },
             submit(){
                 console.log("已經提交 : " + this.email)
-            }
+            },
+            toBirthday(){
+                const bdate = new Date(this.birthday)
+                return bdate.getFullYear()+"年"+ bdate.getMonth()+"月" + bdate.getDay()+"日"
+            },
+            
         },
         created(){  // created 鉤子函數 在加載模板，選染之前調用
             // ajax 請求 success 之後
             this.num = 10000;
             //console.log(this)
+        },
+
+        // 計算方法，可以定義方法，但是方法必須要有返回值，可以像數據模型一樣使用
+        // 計算屬性依賴發生改變才會重新計算，效率較好
+        computed:{
+            get_birthday(){
+                const bdate = new Date(this.birthday)
+                return bdate.getFullYear()+"年"+ bdate.getMonth()+"月" + bdate.getDay()+"日"
+            }
+        },
+
+        // 監聽，方法名稱要跟監聽的對象名稱一樣
+        watch:{
+            search(NewVal,OldVal){  // val1 原本的值 val2 舊值
+                console.log(NewVal)
+                //發送異步請求
+                
+            }
         }
     })
 </script>
