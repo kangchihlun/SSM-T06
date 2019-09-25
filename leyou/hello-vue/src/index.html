@@ -6,27 +6,51 @@
 </head>
 <body>
 <div id = "app">
-    <span>登陸頁</span>
-    <span>註冊頁</span>
+    
+    <span><router-link to="/login">登陸頁</router-link></span>
+    <span><router-link to="/register">註冊頁</router-link></span>
     <hr>
+    <router-view></router-view>
+
+
+    <!-- 手動加載組件 -->
     <!-- login-form 這種寫法會解析成駝峰，標籤內一律只有小寫 -->
-    <loginform></loginform>
-    <registerform></registerform>
+    <!-- <loginform></loginform> -->
+    <!-- <registerform></registerform> -->
     
 </div>
 <script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script> 
 <script src="./js/login.js""></script>
 <script src="./js/register.js""></script>
 <script>
+
+    // vue-router 實例，對應兩個組件
+    const router = new VueRouter({
+        routes:[
+            {
+                path:"/login", //路由路徑，必須以/開頭
+                component:loginform
+            },
+            {
+                path:"/register",
+                component:registerform
+            }
+        ]
+    })
+
     const app = new Vue({
       el:"#app",
       data :{
           name:"andy lau"
       },
-      components:{
-        registerform,
-        loginform
-      }
+      components:{ 
+        //這邊可以不用了
+        // registerform,
+        // loginform
+      },
+      // 記得建立引用  cannot read properties of 'undefined'
+      router
     })
 </script>
 </body>
