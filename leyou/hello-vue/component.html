@@ -18,13 +18,13 @@
 
     // 子組件宣告
     Vue.component("counter", {
-        template:"\
-        <div>\
-            <button @click='num_child++'>點我加 {{num_child}}</button> \
-            </br>\
-            <button @click='subIncre'>父點我加1 {{tm1}}</button>\
-        </div>\
-        ", // 父傳子屬性傳遞 3)) 要用標籤名寫到template裡面
+        template:`
+        <div>
+            <button @click='num_child++'>點我加 {{num_child}}</button>
+            </br>
+            <button @click='subIncre'>父點我加1 {{tm1}}</button>
+        </div>
+        `, // 父傳子屬性傳遞 3)) 要用標籤名寫到template裡面
         data(){  // 數據模型為方法，返回值才是模型，不互相引用，複用多個子組件之間不會相互影響
             return{
                 num_child:0 

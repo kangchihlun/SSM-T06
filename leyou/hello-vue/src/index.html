@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<div id = "app">
+    <span>登陸頁</span>
+    <span>註冊頁</span>
+    <hr>
+    <!-- login-form 這種寫法會解析成駝峰，標籤內一律只有小寫 -->
+    <loginform></loginform>
+    <registerform></registerform>
+    
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="./js/login.js""></script>
+<script src="./js/register.js""></script>
+<script>
+    const app = new Vue({
+      el:"#app",
+      data :{
+          name:"andy lau"
+      },
+      components:{
+        registerform,
+        loginform
+      }
+    })
+</script>
+</body>
+</html>
