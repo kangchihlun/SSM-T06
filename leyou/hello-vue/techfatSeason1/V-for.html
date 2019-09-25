@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <hi>v-For</hi>
+    <hr></hr>
+    <div id="app">
+        <ul>
+            <li v-for="item in sortItems">
+                {{item}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <h3>Student For Loop Display (unsorted) </h3>
+            <li v-for="student in students">
+                {{student.name}} Age: {{student.age}}
+            </li>
+            <hr>
+            <h3>Student For Loop Display With Number (unsorted) </h3>
+            <li v-for="(student,idx) in unsortedStudents">
+                {{idx+1}} : {{student.name}} Age: {{student.age}}
+            </li>
+            <hr>
+            <h3>Student For Loop Display Sorted </h3>
+            <li v-for="(st,idx) in sortStudents">
+                {{st.name}} Age: {{st.age}}
+            </li>
+
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                items:[20,22,12,7,23,48,54,1],
+                students:[
+                    {name:'Panda',age:28},
+                    {name:'King',age:13},
+                    {name:'Panpan',age:23},
+                    {name:'JSPang',age:33},
+                ]
+            },
+            computed:{
+                sortItems:function(){
+                    return this.items.sort(sortNum)
+                },
+                unsortedStudents:function(){
+                    return this.students
+                },
+                sortStudents:function(){
+                    return sortByKey(this.students,'age')
+                }
+            }
+        })
+        function sortNum(a,b){
+            return a-b
+        }
+        function sortByKey(array,key){
+            return array.sort(function(a,b){
+                var x=a[key]
+                var y=b[key]
+                return ((x<y)?-1:(x>y)?1:0)
+            })
+        }
+    </script>
+</body>
+</html>
+

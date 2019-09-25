@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title>VBind Example</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p><img :src="imgsrc" width=400/></p>
+        <p><a :href="weburl" target="_blank" > FAT </a></p>
+        <hr>
+        <!-- : 綁定的縮寫 : -->
+        <div :class="TypeNameA">1.綁定 css </div>
+        <div :class="[TypeNameA,TypeNameB]">2.綁定 css 多參數 </div>
+        <div :class="{classA:isOK}">3.綁定 css 額外參數 </div>
+        <div :class="isOK?TypeNameA:TypeNameB"> 4.三元運算符 </div>
+        <hr>
+        <div :class="{TypeNameA:isOK}">
+            <input type="checkbox" id="isOK" v-model="isOK"/>
+            <label for="isOK">isok = {{isOK}}</label>
+        </div>
+        <hr>
+        <div :style="{color:red,fontSize:font}">5.綁定style</div>
+        <div :style="styleobject">6.綁定styleObject</div>
+    </div>
+    <style> 
+        .classA{
+            color:red
+        }
+        .classB{
+            font-size:x-large
+        }
+    </style> 
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                imgsrc:"https://www.crazy-tutorial.com/wp-content/uploads/2018/03/045thth6786-1200x628.jpg",
+                weburl:"http://www.jspang.com",
+                TypeNameA:"classA",
+                TypeNameB:"classB",
+                isOK:false,
+                red:'red',
+                font:'x-large',
+                styleobject:{
+                    color:'green',
+                    fontSize:'x-large'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <hi>v-if & v-else & v-show</hi>
+    <hr></hr>
+    <div id="app">
+        <div v-show="islogin">您好 kang</div>
+    </div>
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                islogin:true,
+            }
+        })
+    </script>
+</body>
+</html>
+
