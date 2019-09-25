@@ -9,7 +9,8 @@
 <div id = "app">
     <!-- 調用子組件 -->
     <!-- 父子屬性傳遞 1)) :counter >>> 自定義屬性名(v-bind)) 加了 v-bind num 就是js表達式 >>> data 內的數據模型 -->
-    <counter :tm1="num_father"></counter>
+    <!-- 父方法傳遞 2)) @incr 傳入的自定義方法名=父組件方法名 類似 @click 這種事件 -->
+    <counter :tm1="num_father" @incr="incre()"></counter>
     
 </div>
 <script src="./node_modules/vue/dist/vue.js"></script>
@@ -21,15 +22,42 @@
         <div>\
             <button @click='num_child++'>點我加 {{num_child}}</button> \
             </br>\
-            <button @click='tm1++'>父點我加1 {{tm1}}</button>\
+            <button @click='subIncre'>父點我加1 {{tm1}}</button>\
         </div>\
-        ", // 父子屬性傳遞 3)) 要用標籤名寫到template裡面
+        ", // 父傳子屬性傳遞 3)) 要用標籤名寫到template裡面
         data(){  // 數據模型為方法，返回值才是模型，不互相引用，複用多個子組件之間不會相互影響
             return{
                 num_child:0 
             }
         },
-        props:["tm1","num2"] //父子屬性傳遞 2))，key值為html那邊寫的自訂義標籤 2))
+        // 父傳子屬性傳遞 2))，key值為html那邊寫的自訂義標籤 2))
+        // props:["tm1","num2"] 
+        props:{  // 這種寫法可以順便驗證數據類型 key:父組件傳入的key值
+            tm1:{
+                type:Number,
+                // Vue 的 type 有：
+                // String,
+                // Number,
+                // Boolean,
+                // Array,
+                // Object,
+                // Date,
+                // Function,
+                // Symbol
+                default:0,
+                required:true
+            },
+            num2:{
+
+            }
+        },
+
+        methods:{
+            subIncre(){
+                // 屬性子傳父，固定寫法 $emit 後面接父組件調用時傳入的標籤名
+                this.$emit("incr")
+            }
+        }
     })
 
     // 父組件
@@ -37,7 +65,14 @@
       el:"#app",
       data :{
           name:"andy lau",
-          num_father:0  // 父組件屬性
+          num_father:1  // 父組件屬性
+      },
+
+      // 開放給子組件修改父的方法，調用子組件時傳入
+      methods:{
+        incre(){
+            this.num_father++;
+        }
       }
     })
 </script>
