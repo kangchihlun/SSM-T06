@@ -61,6 +61,7 @@
         </ul>
         <hr>
         <!--v-for 可以遍歷拆解 object-->
+        <!-- 額外補充：用v-for 一定要給一個唯一key值，可以提高渲染速度-->
         <ul>
             <li v-for="(value,key,index) in user" :key="index">{{index}}.{{key}}-{{value}}</li>
         </ul>
@@ -149,8 +150,8 @@
             //console.log(this)
         },
 
-        // 計算方法，可以定義方法，但是方法必須要有返回值，可以像數據模型一樣使用
-        // 計算屬性依賴發生改變才會重新計算，效率較好
+        // 計算屬性，可以定義方法，但是方法必須要有返回值，可以像數據模型一樣使用
+        // 計算屬性依賴項發生改變才會重新計算，效率較好，沒改變會從緩存拿取
         computed:{
             get_birthday(){
                 const bdate = new Date(this.birthday)
@@ -158,7 +159,7 @@
             }
         },
 
-        // 監聽，方法名稱要跟監聽的對象名稱一樣
+        // 監聽，方法名稱要跟監聽的數據模型名稱一樣
         watch:{
             search(NewVal,OldVal){  // val1 原本的值 val2 舊值
                 console.log(NewVal)
