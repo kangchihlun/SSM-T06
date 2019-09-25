@@ -8,28 +8,36 @@
 <body>
 <div id = "app">
     <!-- 調用子組件 -->
-    <counter></counter>
-    <counter></counter>
-    <counter></counter>
+    <!-- 父子屬性傳遞 1)) :counter >>> 自定義屬性名(v-bind)) 加了 v-bind num 就是js表達式 >>> data 內的數據模型 -->
+    <counter :tm1="num_father"></counter>
+    
 </div>
 <script src="./node_modules/vue/dist/vue.js"></script>
 <script>
 
     // 子組件宣告
     Vue.component("counter", {
-        template:"<button @click='num++'>點我加 {{num}}</button>",
+        template:"\
+        <div>\
+            <button @click='num_child++'>點我加 {{num_child}}</button> \
+            </br>\
+            <button @click='tm1++'>父點我加1 {{tm1}}</button>\
+        </div>\
+        ", // 父子屬性傳遞 3)) 要用標籤名寫到template裡面
         data(){  // 數據模型為方法，返回值才是模型，不互相引用，複用多個子組件之間不會相互影響
             return{
-                num:0
+                num_child:0 
             }
-        }
+        },
+        props:["tm1","num2"] //父子屬性傳遞 2))，key值為html那邊寫的自訂義標籤 2))
     })
 
     // 父組件
     const app = new Vue({
       el:"#app",
       data :{
-          name:"andy lau"
+          name:"andy lau",
+          num_father:0  // 父組件屬性
       }
     })
 </script>

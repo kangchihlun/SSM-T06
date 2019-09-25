@@ -91,7 +91,7 @@
         <!--text 綁定 store ，改變數量後，按鈕樣式顯示綁定 store 判斷是否大於0-->
         <input type="text" v-model="store"><br>
         <input type="button" v-bind:class="{active:store>0}" v-bind:value="{store}"><br>
-        <!-- 簡寫 v-bind 可省略 -->
+        <!-- 簡寫 v-bind: 可省略成 : -->
         <hr>
         <div class="container">我的生日： {{toBirthday()}}</div>
         <div class="container">計算屬性生日： {{get_birthday}}</div>
