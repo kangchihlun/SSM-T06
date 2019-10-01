@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sun.reflect.generics.tree.ReturnType;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 @Controller
@@ -42,6 +48,19 @@ public class CategoryController {
 
         // 200查詢成功
         return ResponseEntity.ok(categories);
+
+    }
+
+
+    // 返回圖片作法
+    @GetMapping("img")
+    public void imgRst(HttpServletResponse response)throws IOException{
+        response.setContentType("image/png");
+        ServletOutputStream output = response.getOutputStream();
+        String path = "https://spring.hhui.top/spring-blog/imgs/info/info.png";
+        URL uri = new URL(path);
+        BufferedImage img = ImageIO.read(uri);
+        ImageIO.write(img,"png",response.getOutputStream());
 
     }
 }
