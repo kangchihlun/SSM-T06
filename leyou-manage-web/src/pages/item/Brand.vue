@@ -66,7 +66,7 @@
         totalBrands: 0, // 总条数
         brands: [], // 当前页品牌数据
         loading: true, // 是否在加载中
-        pagination: {}, // 分页信息
+        pagination: {}, // 分页信息，免填
         headers: [
           {text: 'id', align: 'center', value: 'id'},
           {text: '名称', align: 'center', sortable: false, value: 'name'},
