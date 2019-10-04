@@ -60,11 +60,17 @@
     methods: {
       submit() {
         // 表单校验
-        if (this.$refs.myBrandForm.validate()) {
-          // 定义一个请求参数对象，通过解构表达式来获取brand中的属性
+        if (this.$refs.myBrandForm.validate()) { //參閱Line2 把myBrandForm 加入Vue.$refs
+          // 定义一个请求参数对象，通过解构表达式来获取brand中的属性，剩下param組成一個對象
           const {categories, letter, ...params} = this.brand;
           // 数据库中只要保存分类的id即可，因此我们对categories的值进行处理,只保留id，并转为字符串
-          params.cids = categories.map(c => c.id).join(",");
+          params.cids = categories.map(c => c.id).join(","); // 把陣列轉成逗號分隔的字符串
+          console.log(params.cids)
+          ///console.log(categories)
+          // params.cid2 = categories.map(c=>{
+          //   console.log(c)
+          // })
+
           // 将字母都处理为大写
           params.letter = letter.toUpperCase();
           // 将数据提交到后台
@@ -85,9 +91,9 @@
       },
       clear() {
         // 重置表单
-        this.$refs.myBrandForm.reset();
+        ///this.$refs.myBrandForm.reset();
         // 需要手动清空商品分类
-        this.categories = [];
+        ///this.categories = [];
       }
     },
     watch: {

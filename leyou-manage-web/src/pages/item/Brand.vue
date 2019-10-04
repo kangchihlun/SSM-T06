@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      <v-btn color="primary" @click="addBrand">新增品牌</v-btn>
+      <v-btn color="primary" @click="addBrand">新增策略</v-btn>
       <!--搜索框，与search属性关联-->
       <v-spacer/>
       <v-flex xs3>
@@ -36,7 +36,8 @@
       </template>
     </v-data-table>
     <!--弹出的对话框-->
-    <v-dialog max-width="500" v-model="show" persistent scrollable>
+    <v-dialog max-width="700" v-model="show" persistent scrollable>
+      <!--  -->
       <v-card>
         <!--对话框的标题-->
         <v-toolbar dense dark color="primary">
@@ -85,8 +86,10 @@
     },
     watch: {
       pagination: { // 监视pagination属性的变化
-        deep: true, // deep为true，会监视pagination的属性及属性中的对象属性变化
-        handler() {
+        deep: true, // deep为true 监视pagination的属性及属性中的对象属性变化
+        // 必開，因為監控對象不是簡單對象，
+        handler(oldVal,newVal){
+          // 實際的業務邏輯
           // 变化后的回调函数，这里我们再次调用getDataFromServer即可
           this.getDataFromServer();
         }
@@ -100,6 +103,7 @@
     methods: {
       getDataFromServer() { // 从服务的加载数的方法。
         // 发起请求
+        
         this.$http.get("/item/brand/page", {
           params: {
             key: this.search, // 搜索条件
