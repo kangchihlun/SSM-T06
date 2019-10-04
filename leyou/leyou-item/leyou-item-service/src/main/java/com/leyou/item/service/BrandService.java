@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.leyou.common.pojo.PageResult;
 import com.leyou.item.mapper.BrandMapper;
 import com.leyou.item.pojo.Brand;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,5 +54,21 @@ public class BrandService {
         PageInfo<Brand> pageInfo = new PageInfo<>(brands);
         // 包装成分页结果集返回
         return new PageResult<>(pageInfo.getTotal(), pageInfo.getList());
+    }
+
+
+    // 新增品牌
+    public void saveBrand(Brand brand, List<Long> cids) {
+
+        // 先新增Brand
+        boolean inserted = this.brandMapper.insertSelective(brand) == 1;
+
+        // 再增加 Brand-Category 對應表
+        if(inserted){
+            cids.forEach(cid->{
+                // 自訂的 sql 語句
+                this.brandMapper.insertCategoryAndBrand(cid,brand.getId());
+            });
+        }
     }
 }
