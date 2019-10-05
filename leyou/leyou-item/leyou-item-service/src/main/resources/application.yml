@@ -4,7 +4,7 @@ spring:
   application:
     name: item-service
   datasource:
-    url: jdbc:mysql://10.3.2.10:3306/hm49
+    url: jdbc:mysql://192.168.0.103:3306/hm49
     username: root
     password: 123456
     hikari:
