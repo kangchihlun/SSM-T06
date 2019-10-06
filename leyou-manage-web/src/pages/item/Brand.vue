@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      <v-btn color="primary" @click="addBrand">新增策略</v-btn>
+      <v-btn color="primary" @click="addBrand">新增講師</v-btn>
       <!--搜索框，与search属性关联-->
       <v-spacer/>
       <v-flex xs3>

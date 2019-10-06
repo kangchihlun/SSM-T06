@@ -59,6 +59,7 @@ public class BrandService {
 
     // 新增品牌
     public void saveBrand(Brand brand, List<Long> cids) {
+        // Todo : 檢查如果不存在才新增
 
         // 先新增Brand
         boolean inserted = this.brandMapper.insertSelective(brand) == 1;

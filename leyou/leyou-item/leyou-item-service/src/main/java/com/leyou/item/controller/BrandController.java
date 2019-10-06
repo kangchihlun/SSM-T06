@@ -8,10 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -52,8 +49,11 @@ public class BrandController {
 
     // 新增品牌
     // POST : http://api.leyou.com/api/item/brand
+    // 本來傳的 如果第一個參數是一個json對象 只能使用一個 class 去接收，不能再接收後續的 param，
+    // saveBrand(@RequestBody Brand brand) // 整體接收，對於中間字段有自訂的沒法
+    // 解法：前端傳送字段改代碼
     @PostMapping
-    public ResponseEntity<Void> saveBrand(Brand brand, @RequestParam(value = "cids") List<Long> cids)
+    public ResponseEntity<Void> saveBrand(Brand brand,@RequestParam(value = "cids") List<Long> cids)
     {
         this.brandService.saveBrand(brand,cids);
         return ResponseEntity.status(HttpStatus.CREATED).build();

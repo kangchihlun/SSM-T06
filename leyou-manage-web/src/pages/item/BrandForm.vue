@@ -48,6 +48,7 @@
           categories: [], // 品牌所属的商品分类数组
         },
         nameRules: [
+          // !v 代表一個bool  !再取反
           v => !!v || "品牌名称不能为空",
           v => v.length > 1 || "品牌名称至少2位"
         ],
@@ -60,7 +61,9 @@
     methods: {
       submit() {
         // 表单校验
-        if (this.$refs.myBrandForm.validate()) { //參閱Line2 把myBrandForm 加入Vue.$refs
+        // 參閱Line2 把myBrandForm 加入Vue.$refs
+        // if(this.$refs.myBrandForm.validate())
+        if (this.valid) {  
           // 定义一个请求参数对象，通过解构表达式来获取brand中的属性，剩下param組成一個對象
           const {categories, letter, ...params} = this.brand;
           // 数据库中只要保存分类的id即可，因此我们对categories的值进行处理,只保留id，并转为字符串
@@ -75,10 +78,13 @@
           params.letter = letter.toUpperCase();
           // 将数据提交到后台
           // this.$http.post('/item/brand', this.$qs.stringify(params))
+          // qs.stringify 轉化對象=>用 & 串起來的字串
           this.$http({
             method: this.isEdit ? 'put' : 'post',
             url: '/item/brand',
-            data: params
+            // 配合後臺不能沒有這種類的定義，改成用$qs，參閱 main.js Line17
+            //data: params
+            data: this.$qs.stringify(params)
           }).then(() => {
             // 关闭窗口
             this.$emit("close");
