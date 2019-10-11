@@ -32,6 +32,8 @@ public class DeptController {
 
     @GetMapping("/emp/{id}")
     public Employee getEmp(@PathVariable("id") Integer id){
-        return employeeMapper.getEmployeeById(id);
+        //return employeeMapper.getEmployeeById(id);
+        // 此getEmployeeById乃interface自動生成，如果在interface再定義一次會報錯
+        return employeeMapper.getEmpById(id);
     }
 }
