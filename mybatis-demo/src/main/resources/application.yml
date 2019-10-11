@@ -4,7 +4,7 @@ spring:
     password: 123456
     #  docker container mysql start :
     # docker run --name mysql02  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    url: jdbc:mysql://10.3.2.8:3306/jdbc # to docker container mysql:5.5  # use ip addr to get ip
+    url: jdbc:mysql://192.168.0.103:3306/jdbc # to docker container mysql:5.5  # use ip addr to get ip
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
@@ -27,4 +27,3 @@ spring:
 mybatis:  # Global configure location
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
-

@@ -15,8 +15,6 @@ public class DeptController {
     @Autowired
     DepartmentMapper departmentMapper;
 
-    @Autowired
-    EmployeeMapper employeeMapper;
 
     @GetMapping("/dept/{id}")
     public Department getDepartment(@PathVariable("id") Integer id){
@@ -30,10 +28,5 @@ public class DeptController {
         return dept;
     }
 
-    @GetMapping("/emp/{id}")
-    public Employee getEmp(@PathVariable("id") Integer id){
-        //return employeeMapper.getEmployeeById(id);
-        // 此getEmployeeById乃interface自動生成，如果在interface再定義一次會報錯
-        return employeeMapper.getEmpById(id);
-    }
+
 }
