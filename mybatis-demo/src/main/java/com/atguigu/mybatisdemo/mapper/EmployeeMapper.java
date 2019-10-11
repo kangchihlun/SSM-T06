@@ -19,4 +19,7 @@ public interface EmployeeMapper {
 
     @Insert("INSERT INTO employee(lastName,email,gender,dId,i) VALUES(#{lastName},#{email},#{gender},#{dId})")
     void insertEmployee(Employee employee);
+
+    @Select("select * from employee where lastName=#{lastName} ")
+    Employee getEmpByLastName(String lastName);
 }
