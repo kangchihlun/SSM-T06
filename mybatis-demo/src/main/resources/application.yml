@@ -28,4 +28,5 @@ spring:
     host: 192.168.0.103
 mybatis:  # Global configure location
   config-location: classpath:mybatis/mybatis-config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml=true
+#debug: true

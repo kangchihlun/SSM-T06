@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 *
 * */
 @Service
-@CacheConfig(cacheNames="emp")
+@CacheConfig(cacheNames="emp",cacheManager="empCacheManager")
 public class EmployeeService {
 
     @Autowired
