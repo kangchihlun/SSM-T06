@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/leyou/src/pom.xml" />
+        <option value="$PROJECT_DIR$/leyou/pom.xml" />
+        <option value="$PROJECT_DIR$/leyou/leyou-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/jpademo/pom.xml" />
+        <option value="$PROJECT_DIR$/democrud/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/pom.properties" />
+        <option value="$PROJECT_DIR$/itcast-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/leyou/leyou-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/leyou/leyou-upload/pom.xml" />
+        <option value="$PROJECT_DIR$/xc-service/xc-framework-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/xc-service/xc-framework-common/pom.xml" />
+        <option value="$PROJECT_DIR$/xc-service/xc-framework-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/xc-service/xc-service-api/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/xc-service/xc-service-api/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/democrud/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/mybatis-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/jpademo/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/rabbitmq-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/pom.properties" />
+        <option value="$PROJECT_DIR$/ssmDemo/mybatis-generator/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

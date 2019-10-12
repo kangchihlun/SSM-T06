@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="democrud" />
+        <module name="es6" />
+        <module name="im-netty-mybatis (1)" />
+        <module name="im-netty-mybatis (2)" />
+        <module name="im-netty-mybatis (3)" />
+        <module name="itcast-zuul" />
+        <module name="jpademo" />
+        <module name="leyou-common" />
+        <module name="leyou-gateway" />
+        <module name="leyou-item-interface" />
+        <module name="leyou-item-service" />
+        <module name="leyou-registry" />
+        <module name="leyou-upload" />
+        <module name="maven-archiver" />
+        <module name="my-batis-demo" />
+        <module name="rabbitmq-demo" />
+        <module name="ssmDemo" />
+        <module name="xc-framework-common" />
+        <module name="xc-framework-utils" />
+        <module name="xc-service-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="democrud" target="1.8" />
+      <module name="es6" target="1.5" />
+      <module name="im-netty-mybatis (1)" target="1.5" />
+      <module name="im-netty-mybatis (2)" target="1.5" />
+      <module name="im-netty-mybatis (2) (com.itzixi)" target="1.5" />
+      <module name="im-netty-mybatis (3)" target="1.5" />
+      <module name="im-netty-mybatis (3) (com.itzixi)" target="1.5" />
+      <module name="itcast-zuul" target="1.8" />
+      <module name="jpademo" target="1.8" />
+      <module name="leyou" target="1.8" />
+      <module name="leyou-common" target="1.8" />
+      <module name="leyou-gateway" target="1.8" />
+      <module name="leyou-item" target="1.8" />
+      <module name="leyou-item-interface" target="1.8" />
+      <module name="leyou-item-service" target="1.8" />
+      <module name="leyou-registry" target="1.8" />
+      <module name="leyou-upload" target="1.8" />
+      <module name="leyou-zuul" target="1.8" />
+      <module name="maven-archiver" target="1.5" />
+      <module name="my-batis-demo" target="1.8" />
+      <module name="rabbitmq-demo" target="1.8" />
+      <module name="ssmDemo" target="1.8" />
+      <module name="xc-framework-common" target="1.8" />
+      <module name="xc-framework-model" target="1.8" />
+      <module name="xc-framework-parent" target="1.8" />
+      <module name="xc-framework-utils" target="1.8" />
+      <module name="xc-service-api" target="1.8" />
+      <module name="zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
