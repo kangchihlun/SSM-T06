@@ -1,6 +1,8 @@
 package com.atguigu.mybatisdemo.bean;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable{ // 繼承可序列化特性
 
     private Integer id;
     private String lastName;

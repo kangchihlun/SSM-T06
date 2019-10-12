@@ -4,13 +4,17 @@ package com.atguigu.mybatisdemo.service;
 import com.atguigu.mybatisdemo.bean.Employee;
 import com.atguigu.mybatisdemo.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
+import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
 
+
+/*
+*  CacheConfig 整個類下共用同一個cache space，不用到方法內各別指定
+*  也可以在此指定 cache manager
+*
+* */
 @Service
+@CacheConfig(cacheNames="emp")
 public class EmployeeService {
 
     @Autowired
