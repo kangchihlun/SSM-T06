@@ -12,6 +12,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 
 import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class RedisConfig {
@@ -37,6 +39,8 @@ public class RedisConfig {
 
         // 多一個前墜，會將cacheName 作為key前墜
         cacheManager.setUsePrefix(true);
+        // 設置過期時間
+        cacheManager.setDefaultExpiration(15L);
         return cacheManager;
     }
 
