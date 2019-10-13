@@ -11,6 +11,7 @@
         <module name="im-netty-mybatis (1)" />
         <module name="im-netty-mybatis (2)" />
         <module name="im-netty-mybatis (3)" />
+        <module name="im-netty-mybatis (3) (com.itzixi)" />
         <module name="itcast-zuul" />
         <module name="jpademo" />
         <module name="leyou-common" />
@@ -19,6 +20,7 @@
         <module name="leyou-item-service" />
         <module name="leyou-registry" />
         <module name="leyou-upload" />
+        <module name="livedemo" />
         <module name="maven-archiver" />
         <module name="my-batis-demo" />
         <module name="rabbitmq-demo" />
@@ -47,6 +49,7 @@
       <module name="leyou-registry" target="1.8" />
       <module name="leyou-upload" target="1.8" />
       <module name="leyou-zuul" target="1.8" />
+      <module name="livedemo" target="1.8" />
       <module name="maven-archiver" target="1.5" />
       <module name="my-batis-demo" target="1.8" />
       <module name="rabbitmq-demo" target="1.8" />

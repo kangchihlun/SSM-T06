@@ -28,6 +28,7 @@
         <option value="$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/pom.properties" />
         <option value="$PROJECT_DIR$/ssmDemo/mybatis-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/livedemo/pom.xml" />
       </list>
     </option>
   </component>
