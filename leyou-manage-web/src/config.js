@@ -7,8 +7,8 @@ const config = {
   },
   api: `${baseUrl}/api`,
   theme:{
-    primary: "#2196F3",
-    secondary: "#455A64",
+    primary: "#E53935",//"#2196F3",
+    secondary: "#455A64", // #FFCDD2
     accent: "#9c27b0",
     error: "#f44336",
     warning: "#FFC107",
