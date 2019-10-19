@@ -24,4 +24,9 @@ public class CategoryService {
         record.setParentId(pid);
         return categoryMapper.select(record);
     }
+
+    public int deleteCategoriesById(Long pid) {
+        categoryMapper.deleteCategoryById(pid);
+        return 0;
+    }
 }
