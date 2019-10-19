@@ -1,7 +1,0 @@
-2019/09/28 13:47:59 [warn] 17728#2864: server name "api.leyou.com/api" has suspicious symbols in E:\web\SSM-T06\tools\nginx-1.14.0/conf/nginx.conf:52
-2019/09/28 13:47:59 [warn] 17284#7408: server name "api.leyou.com/api" has suspicious symbols in E:\web\SSM-T06\tools\nginx-1.14.0/conf/nginx.conf:52
-2019/09/30 20:06:28 [emerg] 17704#18032: bind() to 0.0.0.0:8080 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
-2019/09/30 20:06:42 [emerg] 18288#17624: bind() to 0.0.0.0:8080 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
-2019/09/30 20:13:22 [emerg] 18036#15732: unexpected "}" in E:\web\SSM-T06\tools\nginx-1.14.0/conf/nginx.conf:97
-2019/09/30 20:15:39 [emerg] 18100#18172: bind() to 0.0.0.0:8080 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
-2019/09/30 20:16:20 [emerg] 14480#18184: bind() to 0.0.0.0:8080 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
