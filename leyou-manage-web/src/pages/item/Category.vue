@@ -34,7 +34,14 @@
         console.log("edit... id: " + id + ", name: " + name)
       },
       handleDelete(id) {
-        console.log("delete ... " + id)
+        console.log("handleDelete ~")
+         this.$http.delete("/item/category/list", {
+          params: {
+            pid: id, // 搜索条件
+          }
+        }).then(resp => { 
+          this.$forceUpdate();
+        })
       },
       handleClick(node) {
         console.log(node)
