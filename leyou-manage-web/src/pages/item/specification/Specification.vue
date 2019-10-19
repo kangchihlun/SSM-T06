@@ -80,9 +80,11 @@ export default {
   },
   computed:{
       items(){
+          ///麵包屑新增item到最後一項
           const items = this.currentNode.path;
           if(this.group.name){
               items[3] = this.group.name;
+
           }
           return items;
       }

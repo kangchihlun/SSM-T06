@@ -1,9 +1,10 @@
 <template>
     <div>   
+        <!-- hide-actions  沒有分頁-->
         <v-data-table
         :headers="headers"
         :items="groups"
-        hide-actions
+        hide-actions 
         class="elevation-0"
         >
             <template slot="items" slot-scope="props">
