@@ -4,7 +4,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/leyou/src/pom.xml" />
-        <option value="$PROJECT_DIR$/leyou/pom.xml" />
         <option value="$PROJECT_DIR$/leyou/leyou-registry/pom.xml" />
         <option value="$PROJECT_DIR$/jpademo/pom.xml" />
         <option value="$PROJECT_DIR$/democrud/pom.xml" />

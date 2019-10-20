@@ -14,11 +14,7 @@
         <module name="im-netty-mybatis (3) (com.itzixi)" />
         <module name="itcast-zuul" />
         <module name="jpademo" />
-        <module name="leyou-common" />
-        <module name="leyou-gateway" />
-        <module name="leyou-item-interface" />
-        <module name="leyou-item-service" />
-        <module name="leyou-registry" />
+        <module name="leyou-live" />
         <module name="leyou-upload" />
         <module name="livedemo" />
         <module name="maven-archiver" />
@@ -28,6 +24,12 @@
         <module name="xc-framework-common" />
         <module name="xc-framework-utils" />
         <module name="xc-service-api" />
+      </profile>
+      <profile name="Annotation profile for leyou-registry" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="leyou-registry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -46,7 +48,8 @@
       <module name="leyou-item" target="1.8" />
       <module name="leyou-item-interface" target="1.8" />
       <module name="leyou-item-service" target="1.8" />
-      <module name="leyou-registry" target="1.8" />
+      <module name="leyou-live" target="1.8" />
+      <module name="leyou-registry" target="1.5" />
       <module name="leyou-upload" target="1.8" />
       <module name="leyou-zuul" target="1.8" />
       <module name="livedemo" target="1.8" />

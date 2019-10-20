@@ -1,0 +1,21 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: live-service
+  datasource:
+    url: jdbc:mysql://192.168.0.103:3306/hm49
+    username: root
+    password: 123456
+    hikari:
+      max-lifetime: 28830000 # \u4E00\u4E2A\u8FDE\u63A5\u7684\u751F\u547D\u65F6\u957F\uFF08\u6BEB\u79D2\uFF09\uFF0C\u8D85\u65F6\u800C\u4E14\u6CA1\u88AB\u4F7F\u7528\u5219\u88AB\u91CA\u653E\uFF08retired\uFF09\uFF0C\u7F3A\u7701:30\u5206\u949F\uFF0C\u5EFA\u8BAE\u8BBE\u7F6E\u6BD4\u6570\u636E\u5E93\u8D85\u65F6\u65F6\u957F\u5C1130\u79D2\uFF0C\u53C2\u8003MySQL wait_timeout\u53C2\u6570\uFF08show variables like '%timeout%';\uFF09
+      maximum-pool-size: 9 # \u8FDE\u63A5\u6C60\u4E2D\u5141\u8BB8\u7684\u6700\u5927\u8FDE\u63A5\u6570\u3002\u7F3A\u7701\u503C\uFF1A10\uFF1B\u63A8\u8350\u7684\u516C\u5F0F\uFF1A((core_count * 2) + effective_spindle_count)
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 5\u79D2\u949F\u53D1\u9001\u4E00\u6B21\u5FC3\u8DF3
+    lease-expiration-duration-in-seconds: 10  # 10\u79D2\u4E0D\u53D1\u9001\u5C31\u8FC7\u671F
+mybatis:
+  type-aliases-package: com.leyou.item.pojo

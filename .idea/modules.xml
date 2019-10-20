@@ -8,12 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/im-netty-mybatis (3).iml" filepath="$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/im-netty-mybatis (3).iml" />
       <module fileurl="file://$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/im-netty-mybatis (3) (com.itzixi).iml" filepath="$PROJECT_DIR$/ssmDemo/mybatis-generator/target/classes/META-INF/maven/com.itzixi/im-netty-mybatis/im-netty-mybatis (3) (com.itzixi).iml" />
       <module fileurl="file://$PROJECT_DIR$/ssmDemo/jpademo/jpademo.iml" filepath="$PROJECT_DIR$/ssmDemo/jpademo/jpademo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leyou/leyou.iml" filepath="$PROJECT_DIR$/leyou/leyou.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-common/leyou-common.iml" filepath="$PROJECT_DIR$/leyou/leyou-common/leyou-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-gateway/leyou-gateway.iml" filepath="$PROJECT_DIR$/leyou/leyou-gateway/leyou-gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-item/leyou-item.iml" filepath="$PROJECT_DIR$/leyou/leyou-item/leyou-item.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-item/leyou-item-interface/leyou-item-interface.iml" filepath="$PROJECT_DIR$/leyou/leyou-item/leyou-item-interface/leyou-item-interface.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-item/leyou-item-service/leyou-item-service.iml" filepath="$PROJECT_DIR$/leyou/leyou-item/leyou-item-service/leyou-item-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-live/leyou-live.iml" filepath="$PROJECT_DIR$/leyou/leyou-live/leyou-live.iml" />
       <module fileurl="file://$PROJECT_DIR$/leyou/leyou-registry/leyou-registry.iml" filepath="$PROJECT_DIR$/leyou/leyou-registry/leyou-registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/leyou/leyou-upload/leyou-upload.iml" filepath="$PROJECT_DIR$/leyou/leyou-upload/leyou-upload.iml" />
       <module fileurl="file://$PROJECT_DIR$/livedemo/livedemo.iml" filepath="$PROJECT_DIR$/livedemo/livedemo.iml" />
