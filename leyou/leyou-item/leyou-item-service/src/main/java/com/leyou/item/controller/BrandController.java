@@ -60,4 +60,15 @@ public class BrandController {
 
     }
 
+
+    @GetMapping("cid/{cid}")
+    public ResponseEntity<List<Brand>> queryBrandsByCid(@PathVariable(value = "cid") Long cid){
+        List<Brand> brands = this.brandService.queryBrandsByCid(cid);
+        if( CollectionUtils.isEmpty(brands) ) {
+            return ResponseEntity.notFound().build();
+        }
+        // 200查詢成功
+        return ResponseEntity.ok(brands);
+    }
+
 }

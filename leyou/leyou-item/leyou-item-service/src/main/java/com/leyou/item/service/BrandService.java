@@ -72,4 +72,12 @@ public class BrandService {
             });
         }
     }
+
+
+    /*
+     * 分類id查詢品牌列表
+     */
+    public List<Brand> queryBrandsByCid(Long cid) {
+        return this.brandMapper.selectBrandsByCid(cid);
+    }
 }
