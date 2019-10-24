@@ -12,10 +12,10 @@ import java.util.List;
 @Service
 public class SpecificationService {
     @Autowired
-    SpecGroupMapper specGroupMapper;
+    private SpecGroupMapper specGroupMapper;
 
     @Autowired
-    SpecParamMapper specParamMapper;
+    private SpecParamMapper specParamMapper;
 
 
     public List<SpecGroup> queryGroupByCid(Long cid) {
@@ -26,10 +26,12 @@ public class SpecificationService {
         return this.specGroupMapper.select(record);
     }
 
-    public List<SpecParam> queryParams(Long gid) {
+    public List<SpecParam> queryParams(Long gid,Long cid ,Boolean generic , Boolean search) {
         SpecParam record = new SpecParam();
         record.setGroupId(gid);
-
+        record.setCid(cid);
+        record.setGeneric(generic);
+        record.setSearching(search);
         return this.specParamMapper.select(record);
     }
 }

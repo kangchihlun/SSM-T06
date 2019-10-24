@@ -1,6 +1,10 @@
 package com.leyou.item.pojo.extend;
 
+import com.leyou.item.pojo.Sku;
 import com.leyou.item.pojo.Spu;
+import com.leyou.item.pojo.SpuDetail;
+
+import java.util.List;
 
 // 沒表結構，只有擴展對象
 public class SpuBo extends Spu{
@@ -8,6 +12,11 @@ public class SpuBo extends Spu{
     private String cname;
 
     private String bname;
+
+    private SpuDetail spuDetail;
+
+    private List<Sku> skus;
+
 
     public String getCname() {
         return cname;
@@ -24,4 +33,21 @@ public class SpuBo extends Spu{
     public void setBname(String bname) {
         this.bname = bname;
     }
+
+    public SpuDetail getSpuDetail() {
+        return spuDetail;
+    }
+
+    public void setSpuDetail(SpuDetail spuDetail) {
+        this.spuDetail = spuDetail;
+    }
+
+    public List<Sku> getSkus() {
+        return skus;
+    }
+
+    public void setSkus(List<Sku> skus) {
+        this.skus = skus;
+    }
+
 }

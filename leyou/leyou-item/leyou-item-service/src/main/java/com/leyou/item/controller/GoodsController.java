@@ -6,12 +6,11 @@ import com.leyou.item.pojo.extend.SpuBo;
 import com.leyou.item.service.GoodsService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class GoodsController {
@@ -39,4 +38,13 @@ public class GoodsController {
         return ResponseEntity.ok(pageResult);
     }
 
+
+    /*
+    *   新增商品
+    * */
+    @PostMapping("goods")
+    public ResponseEntity<Void> SaveGoods(@RequestBody SpuBo spuBo){
+        this.goodsService.saveGoods(spuBo);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }

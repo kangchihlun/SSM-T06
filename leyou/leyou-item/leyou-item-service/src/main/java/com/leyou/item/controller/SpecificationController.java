@@ -4,6 +4,7 @@ package com.leyou.item.controller;
 import com.leyou.item.pojo.SpecGroup;
 import com.leyou.item.pojo.SpecParam;
 import com.leyou.item.service.SpecificationService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -39,13 +40,18 @@ public class SpecificationController {
 
 
     /*
-    * 根據gid 查詢規格參數
+    * 根據 gid or cid 查詢規格參數
     * @param cid
     * @return
     * */
     @GetMapping("params")
-    public ResponseEntity<List<SpecParam>> queryParams(@RequestParam("gid") Long gid){
-        List<SpecParam> specParams = this.specificationService.queryParams(gid);
+    public ResponseEntity<List<SpecParam>> queryParams(
+            @RequestParam(value = "gid",required = false) Long gid,
+            @RequestParam(value = "cid",required = false) Long cid,
+            @RequestParam(value = "generic",required = false) Boolean generic, //是否通用
+            @RequestParam(value = "search" ,required = false) Boolean search
+    ){
+        List<SpecParam> specParams = this.specificationService.queryParams(gid,cid,generic,search);
         if(CollectionUtils.isEmpty(specParams)){
             return ResponseEntity.notFound().build();
         }
